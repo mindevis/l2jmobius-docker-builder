@@ -13,7 +13,7 @@ ARG SOURCES="${HOME}/l2j_mobius"
 ARG BUILD="${HOME}/build"
 
 ARG ANT_HOME="${OPT_HOME}/apache-ant-1.10.8/bin"
-ARG JAVA_HOME="${OPT_HOME}/openjdk-14.0.1/bin"
+ARG JAVA_HOME="${OPT_HOME}/jdk-14.0.1/bin"
 
 ARG DW_ANT="https://mirror.datacenter.by/pub/apache.org//ant/binaries/apache-ant-1.10.8-bin.tar.gz"
 ARG TR_ANT="-xvf apache-ant-1.10.8-bin.tar.gz -C ${OPT_HOME}"
@@ -27,7 +27,7 @@ ARG DW_SOURCES="https://bitbucket.org/MobiusDev/l2j_mobius.git"
 ENV ANT_HOME=${ANT_HOME}
 ENV JAVA_HOME=${JAVA_HOME}
 ENV JDK_HOME=${JAVA_HOME}
-ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/apache-ant-1.10.8/bin:/opt/openjdk-14.0.1/bin
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/apache-ant-1.10.8/bin:/opt/jdk-14.0.1/bin
 # ENV ARGS -----
 
 # Update system and clear caches
