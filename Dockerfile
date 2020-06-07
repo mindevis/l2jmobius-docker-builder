@@ -12,8 +12,8 @@ ARG HOME="/home"
 ARG SOURCES="${HOME}/l2j_mobius"
 ARG BUILD="${HOME}/build"
 
-ARG ANT_HOME="${OPT_HOME}/apache-ant-1.10.8/bin"
-ARG JAVA_HOME="${OPT_HOME}/jdk-14.0.1/bin"
+ARG ANT_HOME="${OPT_HOME}/apache-ant-1.10.8"
+ARG JAVA_HOME="${OPT_HOME}/jdk-14.0.1"
 
 ARG DW_ANT="https://mirror.datacenter.by/pub/apache.org//ant/binaries/apache-ant-1.10.8-bin.tar.gz"
 ARG TR_ANT="-xvf apache-ant-1.10.8-bin.tar.gz -C ${OPT_HOME}"
@@ -43,5 +43,4 @@ RUN wget ${DW_ANT} && \
 tar ${TR_ANT} && \
 wget ${DW_JDK} && \
 tar ${TR_JDK} && \
-java --version && ant --version
-#RUN git clone ${DW_SOURCES}
+git clone ${DW_SOURCES}
