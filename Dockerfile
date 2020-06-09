@@ -13,7 +13,6 @@ ARG JAVA_HOME="/opt/jdk-14.0.1"
 # MAIN ARGS ----
 
 # ENV ARGS -----
-ENV COMPILE_TAG=
 ENV ANT_HOME=${ANT_HOME}
 ENV JAVA_HOME=${JAVA_HOME}
 ENV JDK_HOME=${JAVA_HOME}
@@ -35,4 +34,7 @@ wget https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a
 tar -xvf openjdk-14.0.1_linux-x64_bin.tar.gz -C /opt && \
 git clone https://bitbucket.org/MobiusDev/l2j_mobius.git
 
-ENTRYPOINT [ "ant", "-f", "${SOURCES}/L2J_Mobius_${COMPILE_TAG}/build.xml" ]
+WORKDIR ${SOURCES}
+RUN git clone 
+#ENTRYPOINT [ "ant", "-f", "" ]
+CMD [ "/compile.sh", "$1" ]
