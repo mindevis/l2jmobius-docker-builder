@@ -1,3 +1,4 @@
 #! /bin/bash
 
-ant -f $1/build.xml
+cd $1/
+ant -f build.xml
