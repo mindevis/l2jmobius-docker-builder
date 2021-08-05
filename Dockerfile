@@ -1,7 +1,7 @@
-FROM debian
+FROM alpine
 
-LABEL maintainer="mindevis.by@gmail.com" version="1.0" description="Compiling L2jMobius in Docker container"
-SHELL [ "/bin/bash", "-c" ]
+LABEL maintainer="mindevis.by@gmail.com" version="2.0" description="Compiling L2jMobius in Docker container"
+SHELL [ "/bin/sh", "-c" ]
 USER root:root
 
 # ENV ARGS -----
@@ -9,15 +9,9 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/apach
 # ENV ARGS -----
 
 # Update system and clear caches
-RUN apt-get update && \
-apt-get upgrade -y && \
-apt-get install git wget -y && \
-apt-get autoclean && apt-get autoremove && \
-rm -rf /var/lib/apt/lists/*
+RUN apk add --upgrade apk-tools && apk upgrade --available && apk add git wget bash
 
 WORKDIR "/home"
-RUN wget https://raw.githubusercontent.com/mindevis/dcr-l2jmobius/master/req.sh && chmod +x req.sh && bash req.sh
-WORKDIR "/home/l2j_mobius"
 RUN wget https://raw.githubusercontent.com/mindevis/dcr-l2jmobius/master/compile.sh && chmod +x compile.sh
 ENTRYPOINT [ "./compile.sh" ]
 CMD [ "$1" ]
