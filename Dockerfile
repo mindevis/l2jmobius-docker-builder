@@ -11,7 +11,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/apach
 # Update system and clear caches
 RUN apk add --upgrade apk-tools && apk upgrade --available && apk add git wget bash
 
-WORKDIR "/home"
+WORKDIR "/root"
 RUN wget https://raw.githubusercontent.com/mindevis/dcr-l2jmobius/master/compile.sh && chmod +x compile.sh
 ENTRYPOINT [ "./compile.sh" ]
 CMD [ "$1" ]
