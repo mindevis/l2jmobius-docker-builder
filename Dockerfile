@@ -1,11 +1,13 @@
 FROM alpine
 
 LABEL maintainer="mindevis.by@gmail.com" version="2.0" description="Compiling L2jMobius in Docker container"
-#SHELL [ "/bin/bash", "-c" ]
 USER root:root
 
 # ENV ARGS -----
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/apache-ant-1.10.11/bin:/opt/jdk-15.0.2/bin
+ARG ANT_HOME="/opt/apache-ant-1.10.11"
+ARG JAVA_HOME="/opt/jdk-15.0.2"
+ARG JDK_HOME="/opt/jdk-15.0.2"
 # ENV ARGS -----
 
 # Update system and clear caches
