@@ -10,5 +10,5 @@ echo "Clone repository"
 git clone https://bitbucket.org/MobiusDev/l2j_mobius.git
 sleep 3
 
-cd l2j_mobius/$1/
+cd /home/l2j_mobius/$1/
 ant -f build.xml
