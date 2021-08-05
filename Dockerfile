@@ -15,14 +15,8 @@ apt-get install git wget -y && \
 apt-get autoclean && apt-get autoremove && \
 rm -rf /var/lib/apt/lists/*
 
-# Downloading and installing needed components for compiling sources
 WORKDIR "/home"
-RUN wget https://mirror.datacenter.by/pub/apache.org//ant/binaries/apache-ant-1.10.8-bin.tar.gz && \
-tar -xvf apache-ant-1.10.8-bin.tar.gz -C /opt && \
-wget https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz && \
-tar -xvf openjdk-14.0.1_linux-x64_bin.tar.gz -C /opt && \
-git clone https://bitbucket.org/MobiusDev/l2j_mobius.git
-
+RUN wget https://raw.githubusercontent.com/mindevis/dcr-l2jmobius/master/req.sh && chmod +x req.sh && bash req.sh
 WORKDIR "/home/l2j_mobius"
 RUN wget https://raw.githubusercontent.com/mindevis/dcr-l2jmobius/master/compile.sh && chmod +x compile.sh
 ENTRYPOINT [ "./compile.sh" ]
