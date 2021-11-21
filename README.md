@@ -1,6 +1,10 @@
 Хочу представить вашему вниманию образ для компиляции исходного кода **L2jMobius** без установки **JDK**, **ANT**, **сред разработки**.
 ----
+# DCR-TrinityCore
 
+* [BUILD STATUS](#build-status)
+
+----
 Компиляция происходит в системе **Debian Linux**. 
 Производиться автоматическая установка **ANT** и **JDK 17**.
 Автоматически скачивается репозиторий исходного кода.
@@ -92,3 +96,9 @@
 В настройках Docker для Windows у вас должна быть расшарена папка для контейнера.
 
 <img src="https://i.imgur.com/WUdGfHB.png" alt="drawing" />
+
+## Build Status
+
+master |
+:------------:
+[![master Build Status](https://travis-ci.com/mindevis/dcr-l2jmobius.svg?branch=master)](https://travis-ci.com/mindevis/dcr-l2jmobius)
