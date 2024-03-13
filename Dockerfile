@@ -1,6 +1,6 @@
 FROM openjdk:17-alpine
 
-LABEL maintainer="mindevis.by@gmail.com" version="3.0" description="Compiling L2jMobius in Docker container"
+LABEL maintainer="mindevis.by@gmail.com" version="3.1" description="Compiling L2jMobius in Docker container"
 SHELL [ "/bin/sh", "-c" ]
 USER root:root
 
@@ -10,8 +10,6 @@ RUN apk add --no-cache git \
     && rm -rf /tmp/*
 
 ENV PATH=/opt/openjdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/apache-ant-1.10.14/bin
-ENV JAVA_HOME=/opt/openjdk-17
-ENV JAVA_VERSION=17-ea+14
 
 WORKDIR "/root"
 RUN echo -e '#! /bin/sh \n\
